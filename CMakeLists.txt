@@ -96,8 +96,6 @@ option(JAEGERTRACING_WITH_YAML_CPP "Use yaml-cpp to parse config files" ON)
 
 if(JAEGERTRACING_WITH_YAML_CPP)
   hunter_add_package(yaml-cpp)
-  # Not `${hunter_config}` because yaml-cpp provides its own
-  # yaml-cpp-config.cmake file
   find_package(yaml-cpp ${hunter_config} REQUIRED)
   if(HUNTER_ENABLED)
       list(APPEND LIBS yaml-cpp::yaml-cpp)
